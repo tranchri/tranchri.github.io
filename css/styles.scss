@@ -1,7 +1,12 @@
-$white: #fff;
 $accent: #030d58;
 $primary: #fffced;
 $neutral: #262626;
+
+@mixin tablet-and-down {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
 
 body {
   margin: 0;
@@ -17,15 +22,26 @@ body {
   left: 64px;
   margin: 0;
 
-  font-family: 'Noto Serif', serif;
-  font-style: italic;
+  font-size: 36px;
   font-weight: 700;
   color: $primary;
+
+  @include tablet-and-down {
+    bottom: 48px;
+    left: 48px;
+
+    font-size: 34px;
+  }
 }
 
 .content-wrapper {
   max-width: 500px;
-  padding: 64px 0 0 64px;
+  padding: 64px 0 64px 64px;
+
+  @include tablet-and-down {
+    max-width: 100%;
+    padding: 48px 32px;
+  }
 
   a {
     display: inline-block;
@@ -33,11 +49,19 @@ body {
     margin-right: 12px;
 
     border: 3px solid $neutral;
+    border-radius: 8px;
     color: $neutral;
     font-weight: 700;
-
+    text-align: center;
     text-decoration: none;
-    transition: all 0.2s ease;
+
+    @include tablet-and-down {
+      width: calc(100% - 38px);
+
+      + a {
+        margin: 12px 0 0;
+      }
+    }
 
     &:hover {
       background-color: $neutral;
@@ -56,11 +80,20 @@ body {
   width: 100vw;
 
   background-color: $accent;
+
+  @include tablet-and-down {
+    height: 40vh;
+  }
 }
 
 .layout-bottom {
-  height: 50vh;
+  min-height: 50vh;
+  height: 100%;
   width: 100vw;
 
   background-color: $primary;
+
+  @include tablet-and-down {
+    min-height: 60vh;
+  }
 }
