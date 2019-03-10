@@ -1,0 +1,66 @@
+$white: #fff;
+$accent: #030d58;
+$primary: #fffced;
+$neutral: #262626;
+
+body {
+  margin: 0;
+
+  color: $neutral;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}
+
+.name-header {
+  position: absolute;
+  bottom: 64px;
+  left: 64px;
+  margin: 0;
+
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: $primary;
+}
+
+.content-wrapper {
+  max-width: 500px;
+  padding: 64px 0 0 64px;
+
+  a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 12px;
+
+    border: 3px solid $neutral;
+    color: $neutral;
+    font-weight: 700;
+
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $neutral;
+      color: $primary;
+    }
+  }
+}
+
+.bio {
+  margin: 0 0 48px;
+}
+
+.layout-top {
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+
+  background-color: $accent;
+}
+
+.layout-bottom {
+  height: 50vh;
+  width: 100vw;
+
+  background-color: $primary;
+}
